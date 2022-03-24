@@ -1,3 +1,1 @@
 # Dropbox Accelerators
-
-Coming soon!
