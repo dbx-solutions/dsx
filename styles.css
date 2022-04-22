@@ -23,6 +23,31 @@ li {
     list-style: none;
 }
 
+/*******Scrollbar*******/
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #D6D6D6;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #CCCCCC;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: gray;
+  }
 
 /******* Navigation Bar - OG Build *******/
 
@@ -187,19 +212,41 @@ footer {
 }
 
 /*******DSX Universal Config*******/
+.body-content-container {
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+@media (min-width: 32em) {
+    .body-content-container {
+        max-width: 40rem;
+    }
+}
+
+
 .core-body {
-    margin: 5% 25% 0 25%;
+    /*margin: 5% 25% 0 25%;*/
+    
 }
 
 .dsx-page-title {
-
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 800;
+    color: #080808;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .dsx-page-section {
-
+    font-weight: 500;
+    font-size: x-large;
 }
 
 .dsx-page-content {
+    font-weight: 100;
+    padding-left: 10px;
 
 }
 
@@ -242,3 +289,56 @@ footer {
 .content-container {
     padding-bottom: 16px;
 }
+
+/*******Repository Listings*******/
+
+.repo-wrapper {
+    display: grid;
+    border-radius: 10px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill,minmax(250px,250px));
+    grid-template-rows: repeat(auto-fill,minmax(250px,250px));
+    grid-gap: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-content: center;
+    margin: 0%;
+}
+
+.repo-feature {
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 10px;
+    background-color: #EBEBEB;
+    height: 250px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #CCCCCC transparent;
+    text-overflow: ellipsis;
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.repo-core-favorite {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #FFD700;
+    /*border: 1px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;*/
+    align-items: center;
+    display: flex;
+}
+
+.repo-feature-description {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    color: #5C5C5C;
+    font-size: small;
+}
+
