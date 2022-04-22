@@ -49,49 +49,6 @@ li {
     background: gray;
   }
 
-/******* Navigation Bar - OG Build *******/
-
-/*
-.navigation-bar {
-    background-color: #0061FF;
-    overflow:auto;
-    padding-top: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-    position: sticky;
-    top: 0;
-}
-
-.navigation-bar a {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    padding-top: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-}
-
-.navbar-right a:hover{
-    background-color: #1F71FF;
-}
-
-.navbar-right {
-    float: right;
-}
-
-.navbar-left {
-    float: left;
-}
-
-.navbar-left a {
-    font-size: 20px;
-}
-
-*/
-
 /******* Navigation Bar - Mobile Responsive Build *******/
 
 .navbar {
@@ -227,8 +184,7 @@ footer {
 
 
 .core-body {
-    /*margin: 5% 25% 0 25%;*/
-    
+
 }
 
 .dsx-page-title {
@@ -242,11 +198,14 @@ footer {
 .dsx-page-section {
     font-weight: 500;
     font-size: x-large;
+    padding-left: 10px;
+    padding-right: 5px;
 }
 
 .dsx-page-content {
-    font-weight: 100;
-    padding-left: 10px;
+    font-weight: 300;
+    padding-left: 15px;
+    padding-right: 10px;
 
 }
 
