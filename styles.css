@@ -23,29 +23,29 @@ li {
     list-style: none;
 }
 
-/*******Scrollbar*******/
-::-webkit-scrollbar {
+/*******Individual Repo Scrollbars*******/
+.repo-feature::-webkit-scrollbar {
     width: 5px;
   }
   
   /* Track */
-  ::-webkit-scrollbar-track {
+  .repo-feature::-webkit-scrollbar-track {
     background: transparent;
 
   }
   
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+  .repo-feature::-webkit-scrollbar-thumb {
     background-color: #D6D6D6;
     border-radius: 10px;
   }
   
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  .repo-feature::-webkit-scrollbar-thumb:hover {
     background: #CCCCCC;
   }
 
-  ::-webkit-scrollbar-thumb:active {
+  .repo-feature::-webkit-scrollbar-thumb:active {
     background: gray;
   }
 
@@ -290,7 +290,10 @@ footer {
     width: 15px;
     height: 15px;*/
     align-items: center;
-    display: flex;
+    display: inline-block;
+    margin: auto;
+    padding-top: 7px;
+    user-select: none;
 }
 
 .repo-feature-description {
@@ -299,5 +302,17 @@ footer {
     padding: 10px;
     color: #5C5C5C;
     font-size: small;
+
 }
 
+.repo-feature-title {
+    background-color: white;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.repo-feature-title a {
+    color: black;
+    background-color: white;
+}
