@@ -32,7 +32,24 @@
             <h3 class="dsx-page-section">What is it?</h3>
             <p class="dsx-page-content">Most use cases of Dropbox API require setting up fundamental permissions to allow for authentication into your Dropbox team. To make this step of the process easier, we've built out some core API setup steps and Dropbox functionalities to get you started.</p><br>
             <h3 class="dsx-page-section">Available Features</h3>
-            <p class="dsx-page-content">Coming Soon!</p>
+            <p class="dsx-page-content">The core framework will take care of everything related to:</p>
+            <ul class="dsx-page-content">
+              <li>Tokens and authentication
+                <ul>
+                  <li>We will take care of setting up refresh tokens for authentication, making it easy-to-use and ensuring it is secure so you don't have to.</li>
+                </ul>
+              </li>
+              <li>HTTP request scoping
+                <ul>
+                  <li>Many endpoints in Dropbox's API require either "as user" or "as admin" scoping to do the right job. Deciding the right scoping to use may be confusing for users looking to work with multiple endpoints. The framework will handle this responsibility and make sure it uses the right scope for the right endpoint.</li>
+                </ul>
+              </li>
+              <li>Functionality required endpoints
+                <ul>
+                  <li>Some functionalities, such as folder sharing, require calling more than one endpoint to work. We will compile the endpoints needed for each functionality under one call.</li>
+                </ul>
+              </li>
+            </ul>
         </div>
     </div>
   <!--FOOTER-->

@@ -184,10 +184,6 @@ footer {
 }
 
 
-.core-body {
-
-}
-
 .dsx-page-title {
     text-align: center;
     font-size: xx-large;
@@ -207,7 +203,20 @@ footer {
     font-weight: 400;
     padding-left: 15px;
     padding-right: 10px;
+}
 
+.dsx-page-content li {
+    list-style: circle;
+    list-style-position: inside;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.dsx-page-content li li{
+    list-style: none;
+    padding-left: 0;
+    padding-top: 5px;
 }
 
 /*******Index Page Introduction*******/
