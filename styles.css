@@ -1,7 +1,7 @@
 /******* General *******/
 
 body {
-    background-color: #C2D9FF;
+    background-color: rgb(247, 245, 242);
     margin: 0px;
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
@@ -56,19 +56,20 @@ li {
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    background-color: #0061FF;
+    background-color: white;
 }
 
 .logo a {
-    color: white;
+    color: rgb(30, 25, 25);
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    font-weight: 700;
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(30, 25, 25);
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-left: 10px;
@@ -87,7 +88,7 @@ li {
 }
 
 .menu li:hover {
-    background-color: #1F71FF;
+    background-color: rgba(30, 25, 25, .15);
     border-radius: 5px;
     transition: 0.3s ease;
 }
@@ -108,7 +109,8 @@ input[type=checkbox] {
     font-size: 24px;
     user-select: none;
     padding-right: 10px;
-    color: white;
+    color: rgb(30, 25, 25);
+    cursor: pointer;
 }
 
 /*Media Queries*/
@@ -116,7 +118,7 @@ input[type=checkbox] {
     .menu {
         display: none;
         position: absolute;
-        background-color: #0061FF;
+        background-color: white;
         right: 0;
         left: 0;
         text-align: center;
@@ -125,7 +127,7 @@ input[type=checkbox] {
     }
     .menu li:hover {
         display: inline-block;
-        background-color: #1F71FF;
+        background-color: rgba(30, 25, 25, .15);
         transition: 0.3s ease;
         /*width: 100vw;*/
     }
@@ -135,9 +137,26 @@ input[type=checkbox] {
     .hamburger {
         display: block;
     }
+    
+    /*
     input[type=checkbox]:checked ~ .hamburger{
-        color: black;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
     }
+
+    input[type=checkbox]:checked ~ .hamburger:after{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: pink;
+        background-color: red;
+    }
+
+    input[type=checkbox]:checked ~ .hamburger::before{
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        color: green;
+    }
+    */
 }
 
 /*******Footer*******/
@@ -179,7 +198,7 @@ footer {
 
 @media (min-width: 32em) {
     .body-content-container {
-        max-width: 40rem;
+        max-width: 50rem;
     }
 }
 
@@ -219,6 +238,14 @@ footer {
     padding-top: 5px;
 }
 
+.dsx-faq-resources a {
+    color: black;
+}
+
+.dsx-faq-resources a:hover {
+    text-decoration: underline;
+}
+
 /*******Index Page Introduction*******/
 
 .intro-section {
@@ -233,7 +260,7 @@ footer {
 
 .left {
     left: 0;
-    background-color: #B8CDF8;
+    background-color: rgb(247, 245, 242);
     padding: 15% 15% 15% 15%; /*change to 15% 0 15% 15% for no right padding*/
 }
 
@@ -244,15 +271,14 @@ footer {
 
 /*Browse Button*/
 .intro-section a {
-    color: white;
-    background-color: black;
+    color: rgb(247, 245, 242);
+    background-color: rgb(0, 97, 254);
     padding: 15px;
-    border-radius: 4px;
     text-decoration: none;
 }
 
 .intro-section a:hover {
-    background-color: #1F1F1F;
+    background-color: rgba(0,97,254,.82);
 }
 
 .content-container {
@@ -263,7 +289,6 @@ footer {
 
 .repo-wrapper {
     display: grid;
-    border-radius: 10px;
     gap: 10px;
     grid-template-columns: repeat(auto-fill,minmax(250px,250px));
     grid-template-rows: repeat(auto-fill,minmax(250px,250px));
@@ -276,8 +301,7 @@ footer {
 
 .repo-feature {
     box-shadow: 0px 0px 2px gray;
-    border-radius: 10px;
-    background-color: #EBEBEB;
+    background-color: #eee9e2;
     height: 250px;
     overflow-y: auto;
     scrollbar-width: thin;
