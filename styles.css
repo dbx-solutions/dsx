@@ -246,6 +246,15 @@ footer {
     text-decoration: underline;
 }
 
+.dsx-repo-download {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.dsx-repo-download:hover {
+    text-decoration: none;
+}
+
 /*******Index Page Introduction*******/
 
 .intro-section {
@@ -288,27 +297,25 @@ footer {
 /*******Repository Listings*******/
 
 .repo-wrapper {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill,minmax(250px,250px));
-    grid-template-rows: repeat(auto-fill,minmax(250px,250px));
-    grid-gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     padding: 10px;
     justify-content: center;
-    align-content: center;
-    margin: 0%;
+    align-items: center;
+    margin: 0;
 }
 
 .repo-feature {
     box-shadow: 0px 0px 2px gray;
     background-color: #eee9e2;
     height: 250px;
+    width: 250px;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #CCCCCC transparent;
     text-overflow: ellipsis;
     display: inline-block;
-    margin: auto;
     text-align: center;
     position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
