@@ -29,7 +29,6 @@
     <div class="body-content-container"> 
         <div class="core-body">
             <h2 class="dsx-page-title">Folder Templates</h2>
-            <p class="dsx-repo-download">Download link coming soon!</p>
             <h3 class="dsx-page-section">What is it?</h3>
             <p class="dsx-page-content">For organizations that follow a specific organizational structure and naming conventions, folder templates are pre-defined blueprints of how your data will be stored within your Dropbox team. This code will allow for the automatic creation of individual or sets of folders following defined rules, so you can save time without having to manually build out your folders each time.</p>
             <p class="dsx-page-content">We offer two available types of templates:</p>
@@ -47,6 +46,63 @@
               <li>Creating new project folders for teams that follow a structured folder convention for each project</li>
               <li>Creating an onboarding folder structure for new members once they join a Dropbox team</li>
             </ul>
+            <div>
+              <h3 class="dsx-page-section">Installation</h3>
+                <h4 class="dsx-page-subsection">Prerequisites</h4>
+                  <p class="dsx-page-content">Before beginning the steps outlined below, we recommend installing Homebrew or a similar package management software and running the following commands.</p>
+                  <ul class="dsx-page-content">
+                    <li>Node <code>brew install node</code></li>
+                    <li>Npm <code>brew install npm</code></li>
+                  </ul>
+                <div class="dsx-installation-steps">
+                  <ol>
+                    <li>Create a Dropbox API app
+                      <ul>
+                        <li>Go to developers.dropbox.com and click on 'Create Apps'</li>
+                        <li>Create an app with Full Dropbox access</li>
+                        <li>Go to the Settings tab for your app, under OAuth 2, add the following redirect URI: http://localhost:3000/auth/token</li>
+                        <li>Copy the App Key</li>
+                        <li>Set permissions as follows</li>
+                      </ul>
+                    </li>
+                    <li>Retrieve code using git clone
+                      <ul>
+                        <li>Clone the backend repo: <code>git clone git@github.com:dbx-solutions/dsx-folder-templates.git</code></li>
+                        <li>Clone the frontend repo: <code>git clone git@github.com:dbx-solutions/dsx-folder-templates-client.git</code></li>
+                        <li>Note: If you get an access denied error, <a class="dsx-repo-download" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">add your SSH key to your Github account</a></li>
+                      </ul>
+                    </li>
+                    <li>Add config to the backend app to connect to your Dropbox API app
+                      <ul>
+                        <li>Rename .env.example to .env</li>
+                        <li>Add the copied App Key</li>
+                        <li>Add the Redirect URI</li>
+                      </ul>
+                    </li>
+                    <li>Install the backend and frontend apps
+                      <ul>
+                        <li>Go to dsx-folder-templates and run npm install</li>
+                        <li>Go to dsx-folder-templates-client and run npm install</li>
+                      </ul>
+                    </li>
+                    <li>Start both apps
+                      <ul>
+                        <li>Go to dsx-folder-templates and run npm start</li>
+                        <li>Go to dsx-folder-templates-client and run npm start</li>
+                      </ul>
+                    </li>
+                    <li>Update user ID in .env file
+                      <ul>
+                        <li>On your browser go to localhost:8080/members</li>
+                        <li>Check the terminal to see the members list</li>
+                        <li>Copy the team member ID of the admin</li>
+                        <li>Add it to .env</li>
+                        <li>Restart the backend app by running npm start</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+            </div>
         </div>
     </div>
   <!--FOOTER-->

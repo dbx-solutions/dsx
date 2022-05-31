@@ -218,6 +218,13 @@ footer {
     padding-right: 5px;
 }
 
+.dsx-page-subsection {
+    font-weight: 500;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
 .dsx-page-content {
     font-weight: 400;
     padding-left: 15px;
@@ -249,10 +256,30 @@ footer {
 .dsx-repo-download {
     text-align: center;
     text-decoration: underline;
+    color: #080808;
 }
 
 .dsx-repo-download:hover {
     text-decoration: none;
+}
+
+/*Installation Steps*/
+
+.dsx-installation-steps li {
+    list-style-type: decimal;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+}
+
+.dsx-installation-steps li li {
+    list-style-type: lower-alpha;
+}
+
+.body-content-container code {
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 /*******Index Page Introduction*******/
