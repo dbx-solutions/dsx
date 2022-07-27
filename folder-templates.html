@@ -47,61 +47,91 @@
               <li>Creating an onboarding folder structure for new members once they join a Dropbox team</li>
             </ul>
             <div>
-              <h3 class="dsx-page-section">Installation</h3>
+              <h3 class="dsx-page-section">Installation Steps (macOS and Linux)</h3>
                 <h4 class="dsx-page-subsection">Prerequisites</h4>
-                  <p class="dsx-page-content">Before beginning the steps outlined below, we recommend installing Homebrew or a similar package management software and running the following commands.</p>
+                  <p class="dsx-page-content">Before beginning the steps outlined below, you will need to have the following installed on your device:</p>
                   <ul class="dsx-page-content">
-                    <li>Node <code>brew install node</code></li>
-                    <li>Npm <code>brew install npm</code></li>
+                    <li><a class="dsx-repo-download" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></li>
+                    <li><a class="dsx-repo-download" href="https://docs.docker.com/get-docker/">Docker</a></li>
                   </ul>
                 <div class="dsx-installation-steps">
                   <ol>
                     <li>Create a Dropbox API app
                       <ul>
-                        <li>Go to developers.dropbox.com and click on 'Create Apps'</li>
+                        <li>Go to <a class="dsx-repo-download" href="http://developers.dropbox.com/">developers.dropbox.com</a> and click on 'Create Apps'</li>
                         <li>Create an app with Full Dropbox access</li>
-                        <li>Go to the Settings tab for your app, under OAuth 2, add the following redirect URI: http://localhost:3000/auth/token</li>
-                        <li>Copy the App Key</li>
-                        <li>Set permissions as follows</li>
+                        <li>Go to the Settings tab for your app. Under OAuth 2, add the following redirect URI: http://localhost:3000/auth/token</li>
+                        <li>Copy the App Key; you will need this later for Step 3</li>
+                        <li>On the Permissions tab, make sure the following permissions are checked:
+                          <ul>
+                            <li>account_info.read</li>
+                            <li>files.metadata.write</li>
+                            <li>files.content.write</li>
+                            <li>files.content.read</li>
+                            <li>sharing.write</li>
+                            <li>file_requests.write</li>
+                            <li>contacts.write</li>
+                            <li>team_info.read</li>
+                            <li>team_data.member</li>
+                            <li>team_data.team_space</li>
+                            <li>files.team_metadata.write</li>
+                            <li>members.read</li>
+                            <li>members.delete</li>
+                            <li>groups.write</li>
+                            <li>sessions.modify</li>
+                            <li>events.read</li>
+                          </ul>
+                        </li>
                       </ul>
                     </li>
-                    <li>Retrieve code using git clone
+                    <li>Retrieve the app code using git clone
                       <ul>
-                        <li>Clone the backend repo: <code>git clone git@github.com:dbx-solutions/dsx-folder-templates.git</code></li>
-                        <li>Clone the frontend repo: <code>git clone git@github.com:dbx-solutions/dsx-folder-templates-client.git</code></li>
+                        <li>Within your computer's PowerShell or command terminal, jump into the directory where you would like the app to live and run <code>git clone https://github.com/dbx-solutions/folder-templates.git</code></li>
                         <li>Note: If you get an access denied error, <a class="dsx-repo-download" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">add your SSH key to your Github account</a></li>
                       </ul>
                     </li>
-                    <li>Add config to the backend app to connect to your Dropbox API app
+                    <li>Configure the backend app files to connect to your Dropbox API app
                       <ul>
-                        <li>Rename .env.example to .env</li>
-                        <li>Add the copied App Key</li>
-                        <li>Add the Redirect URI</li>
+                        <li>Open the directory containing the cloned repository and rename the .env.example file to .env</li>
+                        <li>Open the .env file and add the copied App Key where prompted. The file will also ask for a User ID, you will find and add this information in a later step.</li>
                       </ul>
                     </li>
-                    <li>Install the backend and frontend apps
-                      <ul>
-                        <li>Go to dsx-folder-templates and run npm install</li>
-                        <li>Go to dsx-folder-templates-client and run npm install</li>
-                      </ul>
+                    <li>Run the applications within PowerShell with the command <code>docker compose up</code>
                     </li>
-                    <li>Start both apps
+                    <li>Update user ID in the .env file
                       <ul>
-                        <li>Go to dsx-folder-templates and run npm start</li>
-                        <li>Go to dsx-folder-templates-client and run npm start</li>
-                      </ul>
-                    </li>
-                    <li>Update user ID in .env file
-                      <ul>
-                        <li>On your browser go to localhost:8080/members</li>
+                        <li>On your browser go to localhost:8080/members (Note: a page may not load, but you will still be able to retrieve the information needed.)</li>
                         <li>Check the terminal to see the members list</li>
-                        <li>Copy the team member ID of the admin</li>
-                        <li>Add it to .env</li>
-                        <li>Restart the backend app by running npm start</li>
+                        <li>Copy the team member ID of the admin running the app</li>
+                        <li>Add this to the .env file where prompted</li>
+                        <li>Restart the backend app by running <code>npm start</code></li>
                       </ul>
                     </li>
+                    <li>Access the app's interface on http://localhost:3000.</li>
                   </ol>
                 </div>
+              <h3 class="dsx-page-section">Adding a new template</h3>
+              <div class="dsx-installation-steps">
+                <ol>
+                  <li>Within the backend application, go to folder-templates/templates</li>
+                  <li>Create a new template by copying/pasting an existing template file, such as the construction template file</li>
+                  <li>Update the template as you like</li>
+                  <li>Add the new template to 'templates.js' in the same folder<!-- like this:
+                    <br>
+                    <code>
+                      <pre>
+                        import new_template from './new_template.js';
+                        
+                        export default {
+                          video_production: video_production,
+                          construction: construction,
+                          new_template: new_template,
+                        }
+                      </pre>
+                    </code>-->
+                  </li>
+                </ol>
+              </div>
             </div>
         </div>
     </div>
