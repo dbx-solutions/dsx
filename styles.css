@@ -285,6 +285,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+  color: #f7f5f2;
 }
 
 @media (min-width: 32em) {
@@ -297,7 +298,6 @@ footer {
   text-align: center;
   font-size: xx-large;
   font-weight: 800;
-  color: #080808;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -337,7 +337,7 @@ footer {
 }
 
 .dsx-faq-resources a {
-  color: black;
+  color: #f7f5f2;
 }
 
 .dsx-faq-resources a:hover {
