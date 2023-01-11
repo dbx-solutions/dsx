@@ -121,7 +121,7 @@
                     </li>
                     <li>Retrieve the app code using git clone
                       <ul>
-                        <li>Within your computer's PowerShell or command terminal, jump into the directory where you would like the app to live and run <code>git clone https://github.com/dbx-solutions/folder-templates.git</code></li>
+                        <li>Within your computer's PowerShell or command terminal, jump into the directory where you would like the app to live and run <code class="inline-code">git clone https://github.com/dbx-solutions/folder-templates.git</code></li>
                         <li>Note: If you get an access denied error, <a class="dsx-repo-download" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">add your SSH key to your Github account</a></li>
                       </ul>
                     </li>
@@ -131,18 +131,18 @@
                         <li>Open the .env file and add the copied App Key where prompted. The file will also ask for a User ID, you will find and add this information in a later step.</li>
                       </ul>
                     </li>
-                    <li>Run the applications within PowerShell with the command <code>docker compose up</code>
+                    <li>Run the applications within PowerShell with the command <code class="inline-code">docker compose up</code>
                     </li>
                     <li>Update user ID in the .env file
                       <ul>
-                        <li>On your browser go to localhost:8080/members (Note: a page may not load, but you will still be able to retrieve the information needed.)</li>
-                        <li>Check the terminal to see the members list</li>
-                        <li>Copy the team member ID of the admin running the app</li>
-                        <li>Add this to the .env file where prompted</li>
-                        <li>Restart the backend app by running <code>npm start</code></li>
+                        <li>On your browser go to http://localhost:3000/; this will be the app's interface.</li>
+                        <li>Connect your Dropbox team using OAuth.</li>
+                        <li>On a new tab, go to localhost:8080/members. Here, locate and copy the team member ID of the admin that will be running the app.</li>
+                        <li>Add this to the .env file where prompted and save your changes.</li>
+                        <li>Restart the backend app by running <code class="inline-code">npm start</code></li>
                       </ul>
                     </li>
-                    <li>Access the app's interface on http://localhost:3000.</li>
+                    <li>Once your team has been connected and the backend application is successfully running, you can begin creating folders from your existing templates.</li>
                   </ol>
                 </div>
               <h3 class="dsx-page-section">Adding a new template</h3>
@@ -153,18 +153,19 @@
                   <li>Update the template as you like</li>
                   <li>Add the new template to 'templates.js' in the same folder like this:
                     <br>
-                    <code class="dsx-code-block">
-                      <pre>
+                    <pre class="dsx-code-block">
+                      <code>
                         import new_template from './new_template.js';
                         
-                        export default {
+                        export  default {
                           video_production: video_production,
                           construction: construction,
                           new_template: new_template,
                         }
-                      </pre>
-                    </code>
+                      </code>
+                    </pre>
                   </li>
+                  <li>Restart the backend app, and refresh the frontend app. Your new template(s) will now be available to choose from.</li>
                 </ol>
               </div>
             </div>

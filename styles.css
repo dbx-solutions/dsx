@@ -366,17 +366,18 @@ footer {
   list-style-type: lower-alpha;
 }
 
-.body-content-container code {
+.body-content-container .inline-code {
   padding: 5px 10px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(247, 245, 242, 0.1);
   border-radius: 5px;
 }
 
 .dsx-code-block {
-  color: pink;
+  color: rgba(247, 245, 242, 0.6);
   padding: 0;
-  background-color: green;
+  background-color: rgba(247, 245, 242, 0.1);
 }
+
 
 /*******Index Page Introduction*******/
 
